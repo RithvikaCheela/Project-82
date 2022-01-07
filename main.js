@@ -2,9 +2,11 @@
  ctx=canvas.getContext("2d");
 
  color="purple";
-
+ lineWidth=5;
+ radius=20;
+ 
  console.log(color);
- console.log(line_width);
+ console.log(lineWidth);
 
  var mouseEvent="empty";
 
@@ -19,7 +21,6 @@
     color=document.getElementById("Color").value;
     lineWidth=document.getElementById("line_width").value;
     radius=document.getElementById("Radius").value;
-    circle(current_pos_mouse_x,current_pos_mouse_y);
  }
  function my_mouseleave(e){
     mouseEvent="mouseleave";
@@ -28,7 +29,6 @@
     mouseEvent="mouseup";
  }
  function my_mousemove(e){
-     mouseEvent="mousemove";
      current_pos_mouse_x=e.clientX-canvas.offsetLeft;
      current_pos_mouse_y=e.clientY-canvas.offsetTop;
 
@@ -43,13 +43,4 @@
         ctx.stroke();
      }
  }
- function circle(current_pos_mouse_x, current_pos_mouse_y){
-    ctx.beginPath();
-    ctx.strokeStyle=color;
-    ctx.lineWidth=2;
-    ctx.arc(current_pos_mouse_x , current_pos_mouse_y, 40,0,2*Math.PI);
-    ctx.stroke();
-}  
-    
-
  
